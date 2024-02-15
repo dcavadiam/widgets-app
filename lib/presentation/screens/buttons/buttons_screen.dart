@@ -68,6 +68,7 @@ class _ButtonsView extends StatelessWidget {
                   label: const Text('Text Icon')),
 
               //TODO: Add custom button
+              const CustomButton(),
 
               IconButton(
                   onPressed: () {}, icon: const Icon(Icons.dashboard_outlined)),
@@ -79,6 +80,30 @@ class _ButtonsView extends StatelessWidget {
                     iconColor: MaterialStateProperty.all(Colors.white),
                   )),
             ],
+          )),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Material(
+          color: colors.primary,
+          child: InkWell(
+            onTap: () {},
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Custom Button',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           )),
     );
   }
