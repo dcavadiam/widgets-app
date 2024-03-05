@@ -38,7 +38,7 @@ class _ThemeChangerView extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
     final List<Color> colorList = ref.watch(colorListProvider);
     // final int selectedColor = ref.watch(selectedColorProvider);
-    final AppTheme selectedColor = ref.watch(themeNotifierProvider);
+    final int selectedColor = ref.watch(themeNotifierProvider).selectedcolor;
 
     return ListView.builder(
       itemCount: colorList.length,
